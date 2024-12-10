@@ -127,15 +127,10 @@ namespace XO_Game
         }
         void RestartGame()
         {
-            RestButton(button1); 
-            RestButton(button2);
-            RestButton(button3);
-            RestButton(button4);
-            RestButton(button5);
-            RestButton(button6);
-            RestButton(button7);
-            RestButton(button8);
-            RestButton(button9);
+            for (int i = 1; i <= 9; i++)
+            {
+               RestButton((Button)this.Controls["button" + i]);
+            }
             GameStatus.Winner = enWinner.InPgrogress;
             GameStatus.PlayerCount = 0;
             PlayerTurn = enPlayer.Player1;
