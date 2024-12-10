@@ -111,7 +111,8 @@ namespace XO_Game
             }
             else
                 MessageBox.Show("You are already made a choice", "Wrong Choice", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (GameStatus.PlayerCount == 9)
+            
+            if (GameStatus.PlayerCount == 9 && !GameStatus.GameOver)
             {
                 GameStatus.Winner = enWinner.Draw;
                 GameStatus.GameOver = true;
@@ -159,50 +160,10 @@ namespace XO_Game
             e.Graphics.DrawLine(whitePen, 610, 140, 610, 620);
             e.Graphics.DrawLine(whitePen, 840, 140, 840, 620);
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
-           ChangeImage(button1);
+            ChangeImage((Button)sender);
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-           ChangeImage(button2);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ChangeImage(button3);
-        }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            ChangeImage(button4);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-           ChangeImage(button5);
-        }
-        private void button6_Click(object sender, EventArgs e)
-        {
-           ChangeImage(button6);
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-           ChangeImage(button7);
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            ChangeImage(button8);
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            ChangeImage(button9);
-        }
-
         private void btnRestart_Click(object sender, EventArgs e)
         {
             RestartGame();
